@@ -7,4 +7,14 @@ layout:
 - go.kubebuilder.io/v4
 projectName: app-operator
 repo: github.com/reolsaikou/toperator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: lin.cn
+  group: switches
+  kind: EdgeSwitch
+  path: github.com/reolsaikou/toperator/api/v1
+  version: v1
 version: "3"

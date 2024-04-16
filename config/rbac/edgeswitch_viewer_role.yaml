@@ -1,0 +1,27 @@
+# permissions for end users to view edgeswitches.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: edgeswitch-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: app-operator
+    app.kubernetes.io/part-of: app-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: edgeswitch-viewer-role
+rules:
+- apiGroups:
+  - switches.lin.cn
+  resources:
+  - edgeswitches
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - switches.lin.cn
+  resources:
+  - edgeswitches/status
+  verbs:
+  - get

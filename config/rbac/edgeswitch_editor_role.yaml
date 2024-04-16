@@ -1,0 +1,31 @@
+# permissions for end users to edit edgeswitches.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: edgeswitch-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: app-operator
+    app.kubernetes.io/part-of: app-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: edgeswitch-editor-role
+rules:
+- apiGroups:
+  - switches.lin.cn
+  resources:
+  - edgeswitches
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - switches.lin.cn
+  resources:
+  - edgeswitches/status
+  verbs:
+  - get

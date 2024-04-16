@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- switches_v1_edgeswitch.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples
